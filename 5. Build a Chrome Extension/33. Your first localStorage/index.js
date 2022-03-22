@@ -1,4 +1,6 @@
-let myLeads = []
+let myLeads = ["www.awesomelead.com"]
+
+
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
@@ -14,9 +16,11 @@ const ulEl = document.getElementById("ul-el")
 // PS: both key and value need to be strings
 
 
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
+    localStorage.setItem("myLeads("+ i + ")", JSON.stringify(myLeads[i]))
     renderLeads()
 })
 
